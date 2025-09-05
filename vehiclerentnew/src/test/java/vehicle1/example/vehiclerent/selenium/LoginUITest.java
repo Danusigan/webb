@@ -1,4 +1,65 @@
 package vehicle1.example.vehiclerent.selenium;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
+class LoginUITest {
+    WebDriver browser;
+
+    @BeforeEach
+    void beforeEach() {
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");  // Use headless mode for CI
+        options.addArguments("--window-size=1280,1024");  // Optional: specify window size for headless
+        options.setAcceptInsecureCerts(true);  // Accept insecure certs if needed
+
+        // Setup WebDriver
+        browser = new FirefoxDriver(options);
+    }
+
+    @Test
+    void loginTest() {
+        // Navigate to the login page
+        browser.get("http://localhost:3000/Login");
+
+        // Wait for the username input to be visible and interact with it
+        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
+        WebElement usernameBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[placeholder='Username']")));
+        usernameBox.sendKeys("arun");
+
+        // Wait for the password input and interact with it
+        WebElement passwordBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[placeholder='Password']")));
+        passwordBox.sendKeys("12345");
+
+        // Click the login button
+        browser.findElement(By.cssSelector("button.login_btn")).click();
+
+        // Wait for the page to load and ensure the expected result is achieved
+        wait.until(ExpectedConditions.urlContains("/dashboard"));  // Adjust based on your actual URL
+
+        // Assert that the correct page or element is displayed (this can vary based on your app's behavior)
+        assertEquals("http://localhost:3000/dashboard", browser.getCurrentUrl(), "The URL after login should be /dashboard");
+    }
+
+    @AfterEach
+    void afterEach() {
+        // Close the browser after each test
+        if (browser != null) {
+            browser.quit();
+        }
+    }
+}
+
 //
 //import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.BeforeEach;
@@ -151,50 +212,50 @@ package vehicle1.example.vehiclerent.selenium;
  */
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+// import org.junit.jupiter.api.AfterEach;
+// import org.junit.jupiter.api.BeforeEach;
+// import org.junit.jupiter.api.Test;
+// import org.openqa.selenium.By;
+// import org.openqa.selenium.WebDriver;
+// import org.openqa.selenium.firefox.FirefoxDriver;
+// import org.openqa.selenium.firefox.FirefoxOptions;
 
-class LoginUITest {
-    WebDriver browser;
+// class LoginUITest {
+//     WebDriver browser;
 
-    @BeforeEach
-    void beforeEach() {
-        var options = new FirefoxOptions();
-        options.addArguments("--safe-mode");
-        options.setCapability("webSocketUrl", true);
-        browser = new FirefoxDriver(options);
-    }
+//     @BeforeEach
+//     void beforeEach() {
+//         var options = new FirefoxOptions();
+//         options.addArguments("--safe-mode");
+//         options.setCapability("webSocketUrl", true);
+//         browser = new FirefoxDriver(options);
+//     }
 
-    @Test
-    void googleTest() throws InterruptedException {
-         browser.get("http://localhost:3000/Login");
-         Thread.sleep(5000);
+//     @Test
+//     void googleTest() throws InterruptedException {
+//          browser.get("http://localhost:3000/Login");
+//          Thread.sleep(5000);
 
-         var firstnameBox=browser.findElement(By.cssSelector("input[placeholder='Username']"));
-         firstnameBox.sendKeys("arun");
-         Thread.sleep(1000);
+//          var firstnameBox=browser.findElement(By.cssSelector("input[placeholder='Username']"));
+//          firstnameBox.sendKeys("arun");
+//          Thread.sleep(1000);
 
-        var passwordBox=browser.findElement(By.cssSelector("input[placeholder='Password']"));
-        passwordBox.sendKeys("12345");
-        Thread.sleep(1000);
-        browser.findElement(By.cssSelector("button.login_btn")).click();
-        Thread.sleep(5000);
-//        browser.get("https://demoqa.com/buttons");
-//        browser.findElement(By.xpath("//button[text()='Click Me']")).click();
-//        var textt=browser.findElement(By.id("dynamicClickMessage")).getText();
-//        System.out.println(textt);
-//        assertEquals("dynamicClickMessage", textt);
-    }
+//         var passwordBox=browser.findElement(By.cssSelector("input[placeholder='Password']"));
+//         passwordBox.sendKeys("12345");
+//         Thread.sleep(1000);
+//         browser.findElement(By.cssSelector("button.login_btn")).click();
+//         Thread.sleep(5000);
+// //        browser.get("https://demoqa.com/buttons");
+// //        browser.findElement(By.xpath("//button[text()='Click Me']")).click();
+// //        var textt=browser.findElement(By.id("dynamicClickMessage")).getText();
+// //        System.out.println(textt);
+// //        assertEquals("dynamicClickMessage", textt);
+//     }
 
-    @AfterEach
-    void afterEach() {
-//        browser.close();
-    }
-}
+//     @AfterEach
+//     void afterEach() {
+// //        browser.close();
+//     }
+// }
