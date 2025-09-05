@@ -1,0 +1,61 @@
+.login_wrapper{
+    background-color: #1a3f6e;
+    margin: 60px auto ;
+    margin-bottom: 50px;
+    width:280px;
+    color:white;
+    align-items: center;
+    border-radius: 20px;
+    
+}
+
+.login_wrapper h2{
+    text-align: center;
+    
+  
+}
+.login_inputbox {
+    position: relative;
+    margin: 30px 0;
+    align-items: center;
+}
+
+.login_inputbox input {
+    width: 200px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    margin-left: 25px;
+}
+
+.login_remember-forget{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: 20px ;
+}
+.login_btn{
+    width: 200px;
+    margin-left: 40px ;
+    
+    height: 45px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+
+}
+.login_register{
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}

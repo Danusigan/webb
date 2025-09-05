@@ -1,0 +1,17 @@
+.three{
+    bottom: 0;
+    border: 0;
+    width: 100%;
+    
+    background-color: #1B4867;
+    color: white;
+    padding: 0;
+    /* position: fixed; */
+    
+}
+.two{
+    text-align: center;
+}
+.four{
+    margin-left: 44.5%;
+}

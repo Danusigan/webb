@@ -1,0 +1,159 @@
+nav1 {
+    position: fixed;
+    background-image: url('bghead.jpg');
+    background-size: cover;
+    background-position:center center;
+    width: 100vw;
+    background-attachment: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    /* transform: scaleX(-1); */
+    
+    height: 1000px;
+    
+    
+    /* justify-content: space-between; */
+
+}
+nav1 .landing_main{
+    display: flex;
+    position: fixed;
+}
+
+nav1 .landing_logo {
+    margin-top: 50px;
+    height: 40px;
+    margin-left: 30px;
+
+}
+
+nav1 h1 {
+    color: #091f35;
+    margin-top: 48px;
+    margin-left: 30px;
+    font-size: 30px;
+    
+
+}
+
+nav1 .landing_Ul {
+    margin-left: 1000px;
+    justify-content: space-between;
+    margin-top: 50px;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    
+
+    margin-right: 20px;
+}
+
+nav1 .landing_Li {
+    margin-right: 20px;
+    color: white;
+}
+
+nav1  .landing_txt{
+    margin-left: 190px;
+    margin-top: 200px;
+    font-size: 30px;
+    color: #091f35;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+nav1  .landing_txt1{
+    margin-left: 300px;
+    margin-top: 0; /* Reduce the top margin */
+    padding-top: 0; 
+    font-size: 20px;
+    color: #2464a3;
+}
+nav1 .landing_vehicles{
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 330px;
+    margin-top: 0; /* Reduce the top margin */
+    padding-top: 0; 
+    color: #1C274D;
+    
+
+}
+nav1 p{
+    margin-left: 200px;
+    margin-top: 60px;
+    font-size: 30px;
+    color: #1C274D;
+    font-weight: bold;
+
+}
+nav1 .landing_line{
+    color: #1C274D;
+    font-size: 20px;
+    font-weight: bold;
+}
+nav1 .landing_button{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    padding-top: 0;
+}
+.landing_button_vehicle{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* margin-top: 50px; */
+}
+
+.landing_button {
+     text-decoration: none;
+    padding: 100px 300px; 
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    margin: 30px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; 
+    transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;  /* Center the buttons horizontally */
+    margin-left: 260px; /* Align buttons next to vehicles */
+    margin-top: 50px;
+  }
+.landing_btn{
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    background-color: #2F1084;
+    font-size: 16px;
+    width: 150px;
+    margin: 20px 0;
+    
+
+}
+
+.landing_btn:hover {
+    background-color: #1e0666; /* Darker purple when hovered */
+  }
+.landing_head1{
+    border: 0;
+    width: 100%;
+    bottom: 0;
+    /* background-color: #1B4867; */
+    color: white;
+    position: fixed;
+    font-size: 20px;
+    
+}
+.landing_head{
+    text-align: center;
+    color: white;
+    margin-left: 00px;
+}
+.landing_head2{
+    margin-left: 42.5%;
+    color: white;
+}

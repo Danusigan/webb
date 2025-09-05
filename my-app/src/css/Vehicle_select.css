@@ -1,0 +1,30 @@
+.Box{
+    border-color: black; 
+    border-width: 2px;
+    border-style: solid;
+    display: inline-block;
+    width: 380px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 90px;
+    
+ }
+ /* .products{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+ } */
+ .Box img {
+    
+    width: 100%; /* Makes the image fill the container */
+    height: 80%; /* Ensures images are uniform in height */
+    object-fit: cover; /* Ensures images cover the entire space without distortion */
+}
+ .Box:hover{
+     background-color: black;
+     color: white;
+ }
+ .products{
+     text-align: center;
+ }
