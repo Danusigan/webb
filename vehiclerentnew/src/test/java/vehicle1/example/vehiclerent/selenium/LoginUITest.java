@@ -174,7 +174,7 @@ class LoginUITest {
 
     @Test
     void googleTest() throws InterruptedException {
-         browser.get("http://localhost:3001/Login");
+         browser.get("http://localhost:3000/Login");
          Thread.sleep(5000);
 
          var firstnameBox=browser.findElement(By.cssSelector("input[placeholder='Username']"));
