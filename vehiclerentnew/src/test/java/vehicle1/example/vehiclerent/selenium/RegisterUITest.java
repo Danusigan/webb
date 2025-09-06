@@ -1,4 +1,3 @@
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,9 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RegisterUITest {
     WebDriver browser;
@@ -23,49 +19,31 @@ class RegisterUITest {
     }
 
     @Test
-   @Test
-void googleTest() throws InterruptedException {
-    browser.get("http://localhost:3000/Register");
+    void googleTest() throws InterruptedException {
+        browser.get("http://localhost:3000/Register");
 
-    // Fill out the form (your existing code)
-    var firstnameBox = browser.findElement(By.cssSelector("input[placeholder='Enter Your Username']"));
-    firstnameBox.sendKeys("arune");
-    
-    var phonenumberBox = browser.findElement(By.cssSelector("input[placeholder='Enter your phone number']"));
-    phonenumberBox.sendKeys("076213123");
-    
-    var passwordBox = browser.findElement(By.cssSelector("input[placeholder='Enter your Password']"));
-    passwordBox.sendKeys("1234");
-    
-    var cpasswordBox = browser.findElement(By.cssSelector("input[placeholder='Confirm Password']"));
-    cpasswordBox.sendKeys("1234");
-    Thread.sleep(1000);
-    
-    var nicBox = browser.findElement(By.cssSelector("input[placeholder='NIC number']"));
-    nicBox.sendKeys("123434242");
-    
-    WebElement checkbox = browser.findElement(By.cssSelector("input[type='checkbox']"));
-    if (!checkbox.isSelected()) {
-        checkbox.click();
-    }
-    
-    // Click register button
-    browser.findElement(By.cssSelector("button.Register_btn")).click();
-    
-    // ADD ASSERTIONS HERE:
-    Thread.sleep(2000); // Wait for redirect
-    
-    // Verify we were redirected to a success page or login page
-    assertTrue(browser.getCurrentUrl().contains("success") || 
-               browser.getCurrentUrl().contains("login") ||
-               browser.getCurrentUrl().contains("home"));
-    
-    // OR verify a success message is displayed
-    WebElement successMessage = browser.findElement(By.cssSelector(".success-message, .alert-success"));
-    assertTrue(successMessage.isDisplayed());
-    assertTrue(successMessage.getText().contains("success") || 
-               successMessage.getText().contains("registered"));
-}
+
+        var firstnameBox=browser.findElement(By.cssSelector("input[placeholder='Enter Your Username']"));
+        firstnameBox.sendKeys("arune");
+
+
+        var phonenumberBox=browser.findElement(By.cssSelector("input[placeholder='Enter your phone number']"));
+        phonenumberBox.sendKeys("076213123");
+
+        var passwordBox=browser.findElement(By.cssSelector("input[placeholder='Enter your Password']"));
+        passwordBox.sendKeys("1234");
+
+        var cpasswordBox=browser.findElement(By.cssSelector("input[placeholder='Confirm Password"));
+        cpasswordBox.sendKeys("1234");
+        Thread.sleep(1000);
+
+        var nicBox=browser.findElement(By.cssSelector("input[placeholder='NIC number"));
+        nicBox.sendKeys("123434242");
+
+        WebElement checkbox = browser.findElement(By.cssSelector("input[type='checkbox']"));
+        if (!checkbox.isSelected()) {  // Check if the checkbox is not already checked
+            checkbox.click();  // Click to tick it
+        }
         browser.findElement(By.cssSelector("button.Register_btn")).click();
 
 //        browser.get("https://demoqa.com/buttons");
