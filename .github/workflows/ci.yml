@@ -79,7 +79,10 @@ jobs:
           -Dsonar.projectKey=Danusigan_webb \
           -Dsonar.organization=danusigan \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.qualitygate.wait=false
+          -Dsonar.login=$SONAR_TOKEN \
+       -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+       -Dsonar.qualitygate.wait=true \          # ← CRITICAL: Wait for quality gate
+       -Dsonar.qualitygate.timeout=300     
           
     - name: Build package
       run: mvn package -DskipTests
