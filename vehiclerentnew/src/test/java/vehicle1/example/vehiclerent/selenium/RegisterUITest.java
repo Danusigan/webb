@@ -20,7 +20,7 @@ class RegisterUITest {
 
     @Test
     void googleTest() throws InterruptedException {
-        browser.get("http://localhost:3000/Register");
+        browser.get("http://localhost:3001/Register");
 
 
         var firstnameBox=browser.findElement(By.cssSelector("input[placeholder='Enter Your Username']"));
