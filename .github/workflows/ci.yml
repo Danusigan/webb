@@ -92,7 +92,7 @@ jobs:
 
   build-frontend:
     runs-on: ubuntu-latest
-    needs: build-backend # Ensure frontend builds only if backend succeeds
+ 
     defaults:
       run:
         working-directory: my-app
