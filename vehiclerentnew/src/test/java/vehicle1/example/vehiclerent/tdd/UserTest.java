@@ -68,7 +68,7 @@ public class UserTest {
     }
 
     @Test
-    public void shouldReturn400WhenAddingEmptyPassword() {
+    private void shouldReturn400WhenAddingEmptyPassword() {
         // Arrange
         User newUser = new User();
         newUser.setName("john"); // Null name
