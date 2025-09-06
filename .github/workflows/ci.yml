@@ -67,16 +67,17 @@ jobs:
       run: mvn test -Dtest=!*Selenium*,!*UI*,!*UITest*
 
     # NEW STEP: SonarQube Analysis
-    - name: SonarQube Analysis
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # You will create this secret
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Auto-provided for PR decoration
-      run: |
-        mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-          -Dsonar.projectKey=Danusigan_webb \ # Replace with your project key from SonarCloud
-          -Dsonar.organization=danusigan \     # Replace with your SonarCloud username/org
-          -Dsonar.host.url=https://sonarcloud.io
-
+    # NEW STEP: SonarQube Analysis
+- name: SonarQube Analysis
+  env:
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # You will create this secret
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Auto-provided for PR decoration
+  run: |
+    mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+      -Dsonar.projectKey=Danusigan_webb \
+      -Dsonar.organization=danusigan \
+      -Dsonar.host.url=https://sonarcloud.io
+      
     - name: Build package
       run: mvn package -DskipTests
 
