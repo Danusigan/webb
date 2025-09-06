@@ -30,7 +30,7 @@ class LoginUITest {
     @Test
     void loginTest() {
         // Navigate to the login page
-        browser.get("http://localhost:3000/Login");
+        browser.get("http://localhost:3001/Login");
 
         // Wait for the username input to be visible and interact with it
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
