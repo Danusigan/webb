@@ -78,7 +78,7 @@ jobs:
         mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
           -Dsonar.projectKey=Danusigan_webb \
           -Dsonar.organization=danusigan \
-          -Dsonar.host.url=https://sonarcloud.
+          -Dsonar.host.url=https://sonarcloud.io
           
     - name: Build package
       run: mvn package -DskipTests
