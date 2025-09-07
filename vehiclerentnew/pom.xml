@@ -31,9 +31,7 @@
 		<sonar.organization>danusigan</sonar.organization>
 		<sonar.projectKey>Danusigan_webb</sonar.projectKey>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<jacoco.version>0.8.11</jacoco.version>
-		<sonar.coverage.exclusions>**/model/**,**/entity/**,**/config/**,**/dto/**</sonar.coverage.exclusions>
-		<sonar.coverage.minimumCoverage>0</sonar.coverage.minimumCoverage>
+		
 	</properties>
 	<dependencies>
 		<dependency>
@@ -139,26 +137,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			
-			<!-- FIXED: Separate plugin for JaCoCo -->
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${jacoco.version}</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+		
+			
 		</plugins>
 	</build>
-</project> is there anything included to affect this error
+</project> 
